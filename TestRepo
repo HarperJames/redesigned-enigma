@@ -1,0 +1,14 @@
+<script runat="server" language="Javascript">
+  Platform.Load("core","1.1.1");
+  var api = new Script.Util.WSProxy();
+var columns = ["CustomerKey","Name","isSendable"],
+    filter = {
+        Property: "Name",
+        SimpleOperator: "equals",
+        Value: "Automation_Activity_Instance_Performance_Harper"
+    }
+
+var req = api.retrieve("DataExtension",columns);
+    //In Version 1 
+    Write("varsion 5" + Stringify(req));
+</script>
