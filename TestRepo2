@@ -1,5 +1,12 @@
-<script runat="server" language="Javascript">
-Platform.Load('core', '1.1.1');
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+</head>
+<body>
+<script runat='server'>
+
+    Platform.Load('core', '1.1.1');
     
     try {
 		
@@ -31,3 +38,5 @@ Platform.Load('core', '1.1.1');
     
     } 		
 </script>
+</body>
+</html>	
