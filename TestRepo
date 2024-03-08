@@ -1,14 +1,45 @@
 <script runat="server" language="Javascript">
   Platform.Load("core","1.1.1");
   var api = new Script.Util.WSProxy();
-var columns = ["CustomerKey","Name","isSendable"],
-    filter = {
-        Property: "Name",
-        SimpleOperator: "equals",
-        Value: "Automation_Activity_Instance_Performance_Harper"
-    }
 
-var req = api.retrieve("DataExtension",columns);
-    //In Version 1 
-    Write("varsion 5" + Stringify(req));
+
+var cols = ["CustomerKey", "Name", "IsSendable"];
+
+var filter = {
+    Property: "CustomerKey",
+    SimpleOperator: "isNotNull",
+    Value: " "
+};
+
+var result = [],
+    moreData = true,
+    reqID = req = null;
+
+while (moreData) {
+
+    moreData = false;
+
+    if (reqID == null) {
+        req = api.retrieve("DataExtension", cols, filter);
+    } else {
+        req = api.getNextBatch("DataExtension", reqID);
+    }
+    
+    if (req) {
+        
+        moreData = req.HasMoreRows;
+        reqID = req.RequestID;
+
+        var results = req.Results;
+
+        for (var k in results) {
+            var name = results[k].Name;
+            result.push(name);
+        }
+        
+    }
+    
+}
+
+Write(Stringify(result.length));
 </script>
