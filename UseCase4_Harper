@@ -15,9 +15,8 @@ try {
     });
 
 
-    var objectID = request.Results[0].ObjectID,
-       
- /* categoryID = request.Results[0].CategoryID;
+   /*  var objectID = request.Results[0].ObjectID,  
+        categoryID = request.Results[0].CategoryID;
 
     var request = api.retrieve("DataExtension", ["CustomerKey"], {
         Property: "Name",
