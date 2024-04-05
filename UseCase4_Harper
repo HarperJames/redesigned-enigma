@@ -18,7 +18,7 @@ try {
         queryText = request.Results[0].QueryText,
         categoryID = request.Results[0].CategoryID;
 
-    var updated_query = queryText + ' where i.userId is NOT NULL';
+    var updated_query = queryText + ' where i.id is NOT NULL';
 
     var config = {
         ObjectID: objectID,
@@ -28,14 +28,14 @@ try {
         TargetUpdateType: "Overwrite",
         QueryText: updated_query,
         DataExtensionTarget: {
-            Name: "MyDataExtension",
+            Name: "	Harper_Query_Product_Case3",
             CustomerKey: targetKey
         }
     };
 
     var result = api.updateItem("QueryDefinition", config);
   
-    Write("version4"+Stringify(result));
+    Write("version5"+Stringify(result));
 
 } catch(error) {
 
