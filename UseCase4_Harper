@@ -1,7 +1,7 @@
 <html>
 
 <script runat="server">
-
+  Platform.Load("core","1");
   var api = new Script.Util.WSProxy();
 
 try {
