@@ -1,7 +1,7 @@
 <html>
 
 <script runat="server">
-  Platform.Load("core","1");
+   Platform.Load("core","1");
   var api = new Script.Util.WSProxy();
 
 try {
@@ -14,10 +14,9 @@ try {
         Value: "9D63CD62-1C93-44FF-9D33-5B9A00560CF3" 
     });
 
-
-   /*  var objectID = request.Results[0].ObjectID,  
-        categoryID = request.Results[0].CategoryID;
-
+     var objectID = request.Results[0].ObjectID,  
+        queryText = request.Results[0].QueryText;
+/*
     var request = api.retrieve("DataExtension", ["CustomerKey"], {
         Property: "Name",
         SimpleOperator: "equals",
@@ -50,7 +49,7 @@ try {
 
     Write(Stringify(error));
     
-} 
+}
 
 </script>
 <body>
