@@ -11,7 +11,7 @@ try {
     var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
         Property: "CustomerKey", 
         SimpleOperator: "equals",
-        Value: "658EAFD3-3E56-48F5-A027-A590A46A65EA" 
+        Value: "Harper_Query_Product_Case3" 
     });
 
      var objectID = request.Results[0].ObjectID,  
@@ -42,7 +42,6 @@ try {
     Write(Stringify(error));
     
 } 
-
 </script>
 <body>
 body
