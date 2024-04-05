@@ -8,48 +8,34 @@ try {
 
     var name = "MyNewQuery";
 
-    var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText"], {
+    var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
         Property: "CustomerKey", 
         SimpleOperator: "equals",
         Value: "9D63CD62-1C93-44FF-9D33-5B9A00560CF3" 
     });
 
      var objectID = request.Results[0].ObjectID,  
-        queryText = request.Results[0].QueryText;
-/*
-    var request = api.retrieve("DataExtension", ["CustomerKey"], {
-        Property: "Name",
-        SimpleOperator: "equals",
-        Value: "MyDataExtension"
-    });
+        queryText = request.Results[0].QueryText,
+        categoryID = request.Results[0].CategoryID;
 
-    var targetKey = request.Results[0].CustomerKey;
-
-    var updated_query =  'SELECT TOP 50 SubscriberKey, EmailAddress FROM _Subscribers';
+    var updated_query = queryText + ' where i.userId is NOT NULL';
 
     var config = {
         ObjectID: objectID,
         Description: "My updated query",
         CategoryID: categoryID,
-        TargetType: "DE",
-        TargetUpdateType: "Overwrite",
         QueryText: updated_query,
-        DataExtensionTarget: {
-            Name: "MyDataExtension",
-            CustomerKey: targetKey
-        }
     };
 
     var result = api.updateItem("QueryDefinition", config);
- */
   
-    Write("version1"+Stringify(request));
+    Write("version1"+Stringify(result));
 
 } catch(error) {
 
     Write(Stringify(error));
     
-}
+} 
 
 </script>
 <body>
