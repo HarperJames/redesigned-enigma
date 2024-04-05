@@ -15,7 +15,7 @@ try {
     });
 
      var objectID = request.Results[0].ObjectID,  
-        queryText = request.Results[0].QueryText;
+        queryText = request.Results[0].QueryText,
         categoryID = request.Results[0].CategoryID;
 
     var updated_query = queryText + ' where i.userId is NOT NULL';
