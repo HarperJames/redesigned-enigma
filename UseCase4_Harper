@@ -11,7 +11,7 @@ try {
     var request = api.retrieve("QueryDefinition", ["CustomerKey","ObjectID","QueryText","CategoryID"], {
         Property: "CustomerKey", 
         SimpleOperator: "equals",
-        Value: "9D63CD62-1C93-44FF-9D33-5B9A00560CF3" 
+        Value: "658EAFD3-3E56-48F5-A027-A590A46A65EA" 
     });
 
      var objectID = request.Results[0].ObjectID,  
