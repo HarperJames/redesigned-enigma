@@ -15,7 +15,7 @@ try {
     });
 
      var objectID = request.Results[0].ObjectID,  
-        queryText = request.Results[0].QueryText,
+        queryText = request.Results[0].QueryText;
         categoryID = request.Results[0].CategoryID;
 
     var updated_query = queryText + ' where i.userId is NOT NULL';
@@ -24,12 +24,18 @@ try {
         ObjectID: objectID,
         Description: "My updated query",
         CategoryID: categoryID,
+        TargetType: "DE",
+        TargetUpdateType: "Overwrite",
         QueryText: updated_query,
+        DataExtensionTarget: {
+            Name: "MyDataExtension",
+            CustomerKey: targetKey
+        }
     };
 
     var result = api.updateItem("QueryDefinition", config);
   
-    Write("version2"+Stringify(result));
+    Write("version1"+Stringify(result));
 
 } catch(error) {
 
