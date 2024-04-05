@@ -13,9 +13,11 @@ try {
         SimpleOperator: "equals",
         Value: "9D63CD62-1C93-44FF-9D33-5B9A00560CF3" 
     });
- /*
+
+
     var objectID = request.Results[0].ObjectID,
-        categoryID = request.Results[0].CategoryID;
+       
+ /* categoryID = request.Results[0].CategoryID;
 
     var request = api.retrieve("DataExtension", ["CustomerKey"], {
         Property: "Name",
