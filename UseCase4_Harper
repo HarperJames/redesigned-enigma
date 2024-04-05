@@ -29,7 +29,7 @@ try {
 
     var result = api.updateItem("QueryDefinition", config);
   
-    Write("version1"+Stringify(result));
+    Write("version2"+Stringify(result));
 
 } catch(error) {
 
